@@ -36,6 +36,14 @@ Cinema.prototype.filterByGenre = function (genre){
   return foundFilms;
 }
 
+Cinema.prototype.filmsPresentFromYear = function (year) {
+  const yearList = this.films.map((film) => {
+    return film.year;
+  });
+  return yearList.includes(year)
+}
+
+
 
 module.exports = Cinema;
 
