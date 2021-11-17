@@ -43,7 +43,15 @@ Cinema.prototype.filmsPresentFromYear = function (year) {
   return yearList.includes(year)
 }
 
-
+Cinema.prototype.allFilmsOver = function (length_input) {
+  const lengthList = this.films.map((film) => {
+    return film.length;
+  });
+  const result =  lengthList.every((length) => { 
+    return length > length_input;
+  })
+  return result
+}
 
 module.exports = Cinema;
 
